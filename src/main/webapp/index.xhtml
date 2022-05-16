@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title>JSF Maven Tutorial!</title>
+</head>
+
+<body>
+	<f:view>
+		<h:outputLabel value="Welcome : #{loginBean.name}"></h:outputLabel>
+		<h:form>
+			<table>
+				<tr>
+					<td><span>Number 1</span></td>
+
+					<td><h:inputText id="number1" value="#{calculator.number1}" />
+					</td>
+				</tr>
+
+				<tr>
+					<td><span>Number 2</span></td>
+
+					<td><h:inputText id="number2" value="#{calculator.number2}" />
+					</td>
+				</tr>
+
+				<tr>
+					<td></td>
+
+					<td>
+					<h:commandButton value="+" action="#{calculator.add()}" /> &nbsp;
+					<h:commandButton  value="-" action="#{calculator.subtract()}" /> &nbsp; 
+					<h:commandButton value="*" action="#{calculator.multiply()}" /> &nbsp;
+					<h:commandButton value="/" action="#{calculator.divide()}" /> 
+					
+				   </td>
+				    
+
+				</tr>
+			</table>
+
+		</h:form>
+		<h:outputLabel value="Result: #{calculator.result}"></h:outputLabel>
+	</f:view>
+</body>
+</html>
