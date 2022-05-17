@@ -7,18 +7,24 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <head>
-<title>JSF Maven Tutorial!</title>
+<title>Calculator</title>
 </head>
 
 <body>
 	<f:view>
 		<h:form>
+			<h:messages style="color:red;font-weight:bold;"></h:messages>
 			<table>
 				<tr>
 					<td><span>Name</span></td>
 
-					<td><h:inputText id="name" value="#{loginBean.name}" /></td>
+					<td><h:inputText id="name" value="#{loginBean.name}"
+							required="true" requiredMessage="Please enter name">
+							<f:validateLength minimum="4" maximum="10" for="name"></f:validateLength>
+						</h:inputText></td>
+
 				</tr>
+
 
 				<tr>
 

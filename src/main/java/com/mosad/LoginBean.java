@@ -2,13 +2,12 @@ package com.mosad;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
-// @SessionScoped
-@ApplicationScoped
+@SessionScoped
+
 public class LoginBean implements Serializable {
 	/**
 	 * 
@@ -28,6 +27,5 @@ public class LoginBean implements Serializable {
 
 		return "index.xhtml";
 	}
-	
 
 }

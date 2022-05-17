@@ -7,13 +7,14 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <head>
-<title>JSF Maven Tutorial!</title>
+<title>Calculator</title>
 </head>
 
 <body>
 	<f:view>
 		<h:outputLabel value="Welcome : #{loginBean.name}"></h:outputLabel>
 		<h:form>
+			<h:messages style="color:red;font-weight:bold;"></h:messages>
 			<table>
 				<tr>
 					<td><span>Number 1</span></td>
@@ -32,20 +33,26 @@
 				<tr>
 					<td></td>
 
-					<td>
-					<h:commandButton value="+" action="#{calculator.add()}" /> &nbsp;
-					<h:commandButton  value="-" action="#{calculator.subtract()}" /> &nbsp; 
-					<h:commandButton value="*" action="#{calculator.multiply()}" /> &nbsp;
-					<h:commandButton value="/" action="#{calculator.divide()}" /> 
-					
-				   </td>
-				    
+					<td><h:commandButton value="+" action="#{calculator.add()}" />
+						&nbsp; <h:commandButton value="-"
+							action="#{calculator.subtract()}" /> &nbsp; <h:commandButton
+							value="*" action="#{calculator.multiply()}" /> &nbsp; <h:commandButton
+							value="/" action="#{calculator.divide()}" /></td>
+
 
 				</tr>
 			</table>
 
 		</h:form>
 		<h:outputLabel value="Result: #{calculator.result}"></h:outputLabel>
+		<br></br>
+		<h:outputLabel value="MyOperation:"></h:outputLabel>
+		<h:dataTable value="#{calculator.list}" var="opreation">
+			<h:column>
+	 #{opreation}
+	 </h:column>
+		</h:dataTable>
+
 	</f:view>
 </body>
 </html>
